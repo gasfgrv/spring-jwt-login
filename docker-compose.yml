@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  mariadb:
+    image: mariadb:10.7
+    container_name: login_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: login

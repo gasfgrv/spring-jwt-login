@@ -20,7 +20,7 @@ Api que valida um usuário a partir de um token JWT.
 
 ### Realizar o login
 
-#### POST `/login`
+#### POST `v1/login`
 
 ##### Responses
 
@@ -30,7 +30,7 @@ Api que valida um usuário a partir de um token JWT.
 
 ### 
 
-#### GET `/login/sucesso`
+#### GET `v1/login/sucesso`
 ##### Responses
 
 | Code | Description |
@@ -135,7 +135,7 @@ servers:
   - url: http://localhost:8080
     description: Generated server url
 paths:
-  /login:
+  /v1/login:
     post:
       tags:
         - autenticacao-controller
@@ -153,7 +153,7 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/DadosTokenJWT'
-  /login/sucesso:
+  /v1/login/sucesso:
     get:
       tags:
         - autenticacao-controller
@@ -166,7 +166,7 @@ paths:
               schema:
                 type: string
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
 components:
   schemas:
     DadosAutenticacao:
